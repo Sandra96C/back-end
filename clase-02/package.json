@@ -11,5 +11,8 @@
   "keywords": [],
   "author": "Sandra Colomer",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
