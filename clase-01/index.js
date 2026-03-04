@@ -1,3 +1,4 @@
+import { error } from "node:console";
 import * as http from "node:http";
 
 const products = [
@@ -94,7 +95,7 @@ const server = http.createServer((req, res) => {
     res.setHeader("Content-Type", "application/json");
     if (!category) {
       res.statusCode = 404;
-      res.end(JSON.stringify({ message: "Category Not Found" }));
+      res.end(JSON.stringify({ error: "Category Not Found" }));
       return;
     }
 
@@ -105,7 +106,7 @@ const server = http.createServer((req, res) => {
 
   res.statusCode = 404;
   res.setHeader("Content-Type", "application/json");
-  res.end(JSON.stringify({ message: "Not Found" }));
+  res.end(JSON.stringify({ error: "Not Found" }));
 });
 
 server.listen(3000, () => {
